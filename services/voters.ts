@@ -1,4 +1,4 @@
-const API_URL = 'https://pollcheck-backend.uc.r.appspot.com/voters';
+const API_URL = 'http://localhost:5000';
 
 function getToken(): string | null {
   return localStorage.getItem('token');
@@ -78,20 +78,8 @@ export async function searchVoters(
   return res.json();
 }
 
-export async function listVoters(
-  page = 1,
-  limit = 50,
-  filters?: { gender?: string; minAge?: number; maxAge?: number; voteFilter?: VoteFilter }
-): Promise<VotersSearchResponse> {
-  const params = new URLSearchParams({ page: String(page), limit: String(limit) });
-  if (filters?.gender) params.set('gender', filters.gender);
-  if (filters?.minAge) params.set('minAge', String(filters.minAge));
-  if (filters?.maxAge) params.set('maxAge', String(filters.maxAge));
-  if (filters?.voteFilter && filters.voteFilter !== 'all') {
-    params.set('hasVoted', filters.voteFilter === 'voted' ? 'true' : 'false');
-  }
-  
-  const res = await fetch(`${API_URL}/api/voters?${params}`, {
+export async function listVoters(): Promise<VotersSearchResponse> {
+  const res = await fetch(`${API_URL}/api/voters`, {
     headers: authHeaders(),
   });
   if (!res.ok) {

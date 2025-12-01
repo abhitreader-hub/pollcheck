@@ -238,7 +238,7 @@ const App: React.FC = () => {
           <p className="text-center text-sm text-gray-500 flex items-center justify-center gap-1.5">
             Made With <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" /> By 
             <a 
-              href="https://branding-catalyst.vercel.app/" 
+              href="https://brandingcatalyst.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-600 hover:to-indigo-600 transition-all"

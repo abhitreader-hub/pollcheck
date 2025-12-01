@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://pollcheck-backend.uc.r.appspot.com/';
 
 function getToken(): string | null {
   return localStorage.getItem('token');

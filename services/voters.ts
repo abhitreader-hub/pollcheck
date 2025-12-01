@@ -1,4 +1,4 @@
-const API_URL = 'https://pollcheck-backend.uc.r.appspot.com/';
+const API_URL = 'https://pollcheck-backend.uc.r.appspot.com/voters';
 
 function getToken(): string | null {
   return localStorage.getItem('token');

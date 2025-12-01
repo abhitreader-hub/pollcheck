@@ -19,7 +19,7 @@ import {
 type VoteFilter = 'all' | 'voted' | 'not_voted';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'dashboard' | 'search' | 'practice'>('practice');
+   const [currentPage, setCurrentPage] = useState<'dashboard' | 'search' | 'practice' | 'home'>('home');
   const [isAuthenticated, setIsAuthenticated] = useState(() => !!localStorage.getItem('token'));
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -56,7 +56,7 @@ const App: React.FC = () => {
     if (window.confirm("Are you sure you want to logout?")) {
       await logout();
       setIsAuthenticated(false);
-      setCurrentPage('practice');
+       setCurrentPage('home');
     }
   };
 
@@ -68,7 +68,7 @@ const App: React.FC = () => {
           <div className="flex justify-between items-center h-16">
             <div 
               className="flex items-center space-x-3 cursor-pointer group transition-transform hover:scale-[1.02] active:scale-[0.98]" 
-              onClick={() => setCurrentPage('practice')}
+              onClick={() => setCurrentPage('home')}
             >
               <div className="relative">
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 rounded-full opacity-0 group-hover:opacity-60 blur-md transition-opacity duration-300"></div>
@@ -222,6 +222,14 @@ const App: React.FC = () => {
 
             {/* List Section */}
             <VoterList searchQuery={searchQuery} voteFilter={voteFilter} onVoteChange={handleVoteChange} />
+          </div>
+       ) : currentPage === 'home' ? (
+          <div className="animate-fade-in flex items-center justify-center min-h-[70vh]">
+            <img 
+              src="/image.jpg" 
+              alt="Welcome" 
+              className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+            />
           </div>
         ) : (
           <PracticeVoting />

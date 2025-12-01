@@ -82,8 +82,7 @@ const App: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-extrabold tracking-tight leading-none">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600">Poll</span>
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700">Check</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600">Shiv Sena</span>
                 </h1>
                 <span className="text-[9px] font-semibold text-gray-400 tracking-[0.2em] uppercase hidden sm:block">
                   Voter Management

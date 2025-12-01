@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://pollcheck-backend.uc.r.appspot.com/';
 
 export interface User {
   id: number;

@@ -1,0 +1,5 @@
+{
+  "name": "PollCheck - Voter Management",
+  "description": "A comprehensive tool for poll booth managers to track voter lists, mark voting status, and visualize turnout statistics in real-time. Features AI-powered sample data generation.",
+  "requestFramePermissions": []
+}

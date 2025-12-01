@@ -93,6 +93,7 @@ const App: React.FC = () => {
             <div className="flex items-center space-x-2 md:space-x-4">
               {/* Navigation Tabs */}
               <div className="flex bg-gray-100/80 p-1 rounded-xl mr-2 md:mr-4 shadow-inner">
+                 {/* Dashboard button hidden
                 <button
                   onClick={handleDashboardClick}
                   className={`flex items-center px-3 md:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -105,6 +106,7 @@ const App: React.FC = () => {
                   <LayoutDashboard size={16} className="mr-1.5" />
                   <span className="hidden sm:inline">Dashboard</span>
                 </button>
+                 */}
                 <button
                   onClick={handleVotersClick}
                   className={`flex items-center px-3 md:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -117,6 +119,7 @@ const App: React.FC = () => {
                   <Users size={16} className="mr-1.5" />
                   <span className="hidden sm:inline">Voters</span>
                 </button>
+               {/* Practice EVM button hidden
                 <button
                   onClick={() => setCurrentPage('practice')}
                   className={`flex items-center px-3 md:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -129,6 +132,7 @@ const App: React.FC = () => {
                   <span className="hidden sm:inline">Practice EVM</span>
                   <span className="sm:hidden">EVM</span>
                 </button>
+                  */}
               </div>
 
               {(currentPage === 'dashboard' || currentPage === 'search') && isAuthenticated && (

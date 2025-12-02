@@ -64,10 +64,10 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 font-sans text-gray-900 pb-20">
       {/* Header */}
       <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm shadow-gray-100/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+                <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16">
             <div 
-              className="flex items-center space-x-3 cursor-pointer group transition-transform hover:scale-[1.02] active:scale-[0.98]" 
+              className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group transition-transform hover:scale-[1.02] active:scale-[0.98]" 
               onClick={() => setCurrentPage('home')}
             >
               <div className="relative">
@@ -76,15 +76,15 @@ const App: React.FC = () => {
                   <img 
                     src="/logomain.png" 
                     alt="PollCheck Logo" 
-                    className="h-9 w-9 object-contain rounded-full bg-white p-0.5" 
+                    className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full bg-white p-0.5" 
                   />
                 </div>
               </div>
               <div className="flex flex-col">
-                <h1 className="text-xl font-extrabold tracking-tight leading-none">
+                                <h1 className="text-lg sm:text-xl font-extrabold tracking-tight leading-none">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600">Shiv Sena</span>
                 </h1>
-                <span className="text-[9px] font-semibold text-gray-400 tracking-[0.2em] uppercase hidden sm:block">
+                <span className="text-[8px] sm:text-[9px] font-semibold text-gray-400 tracking-[0.15em] sm:tracking-[0.2em] uppercase hidden xs:block">
                   Voter Management
                 </span>
               </div>
@@ -150,7 +150,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {currentPage === 'dashboard' ? (
           <div className="animate-fade-in">
             {/* Stats Section */}
@@ -159,62 +159,62 @@ const App: React.FC = () => {
         ) : currentPage === 'search' ? (
           <div className="animate-fade-in">
             {/* Page Header */}
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Voter Search</h2>
-              <p className="text-gray-500 mt-1">Search and manage voter records</p>
+            <div className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Voter Search</h2>
+              <p className="text-gray-500 text-sm sm:text-base mt-0.5 sm:mt-1">Search and manage voter records</p>
             </div>
 
             {/* Search Toolbar */}
-            <div className="mb-6 flex flex-col sm:flex-row gap-4">
-              <div className="relative flex-1 max-w-xl group">
+            <div className="mb-4 sm:mb-6 flex flex-col gap-3 sm:gap-4">
+              <div className="relative flex-1 group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-focus-within:opacity-20 blur transition-opacity duration-300"></div>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Search className="h-5 w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
+                  <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                    <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
                   </div>
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 text-sm transition-all shadow-sm hover:shadow-md hover:border-gray-300"
-                    placeholder="Search by name or voter ID (min 2 characters)..."
+                    className="block w-full pl-9 sm:pl-11 pr-3 sm:pr-4 py-3 sm:py-3.5 border border-gray-200 rounded-xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 text-sm transition-all shadow-sm hover:shadow-md hover:border-gray-300"
+                    placeholder="Search by name or voter ID..."
                   />
                 </div>
               </div>
               
               {/* Filter Buttons */}
-              <div className="flex items-center bg-white rounded-xl border border-gray-200 p-1 shadow-sm">
+              <div className="flex items-center bg-white rounded-xl border border-gray-200 p-1 shadow-sm w-full sm:w-auto">
                 <button
                   onClick={() => setVoteFilter('all')}
-                  className={`flex items-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`flex-1 sm:flex-none flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
                     voteFilter === 'all'
                       ? 'bg-indigo-500 text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-50'
                   }`}
                 >
-                  <Users size={16} className="mr-2" />
+                  <Users size={14} className="mr-1.5 sm:mr-2" />
                   All
                 </button>
                 <button
                   onClick={() => setVoteFilter('voted')}
-                  className={`flex items-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`flex-1 sm:flex-none flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
                     voteFilter === 'voted'
                       ? 'bg-green-500 text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-50'
                   }`}
                 >
-                  <CheckCircle2 size={16} className="mr-2" />
+                  <CheckCircle2 size={14} className="mr-1.5 sm:mr-2" />
                   Voted
                 </button>
                 <button
                   onClick={() => setVoteFilter('not_voted')}
-                  className={`flex items-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`flex-1 sm:flex-none flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
                     voteFilter === 'not_voted'
                       ? 'bg-amber-500 text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-50'
                   }`}
                 >
-                  <Circle size={16} className="mr-2" />
+                  <Circle size={14} className="mr-1.5 sm:mr-2" />
                   Pending
                 </button>
               </div>

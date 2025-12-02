@@ -49,7 +49,7 @@ const App: React.FC = () => {
   const handleLogin = () => {
     setIsAuthenticated(true);
     setIsLoginModalOpen(false);
-    setCurrentPage('dashboard');
+    setCurrentPage('search');
   };
 
   const handleLogout = async () => {
